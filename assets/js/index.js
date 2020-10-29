@@ -24,7 +24,7 @@ $(function() {
 
 // 将函数封装在全局
 function getUserInfo() {
-    $.ajax({
+    +$.ajax({
         type: 'get',
         url: '/my/userinfo',
         success: function(res) {
