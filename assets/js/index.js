@@ -2,6 +2,24 @@
 $(function() {
     // 获取登录用户数据
     getUserInfo()
+
+    var layer = layui.layer
+    $('#btnLogOut').on('click', function() {
+        layer.confirm('确定退出登录?', { icon: 3, title: '提示' }, function(index) {
+            //do something
+
+            // 确定退出,删除本地token
+            localStorage.removeItem('token')
+
+            // 跳转到登录页面
+            location.href = '/login.html'
+
+            // 添加登录拦截
+            // 在baseAPI.js添加
+
+            layer.close(index);
+        });
+    })
 })
 
 // 将函数封装在全局
